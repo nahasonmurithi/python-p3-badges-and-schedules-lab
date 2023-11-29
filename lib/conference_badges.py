@@ -1,11 +1,17 @@
 def badge_maker(name):
-    return None
+    return f"Hello, my name is {name}."
 
 def batch_badge_creator(names):
-    return None
+    batch_badges = [f'Hello, my name is {name}.' for name in names]
+    return batch_badges
 
 def assign_rooms(names):
-    return None
+    roomDist = [f"Hello, {name}! You'll be assigned to room {names.index(name) +1}!" for name in names]
+    return roomDist
 
 def printer(names):
-    return None
+    badge_names = batch_badge_creator(names)
+    rooms_assigned = assign_rooms(names)
+    responses = [*badge_names, *rooms_assigned]
+    for response in responses:
+        print(response)
